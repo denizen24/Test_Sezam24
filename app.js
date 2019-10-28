@@ -24,4 +24,6 @@ app.get('*', (req, res) => {
   res.status(404).send('The resource can not be found');
 });
 
-app.listen(PORT);
+// app.listen(PORT); //for testing
+
+module.exports = app;
