@@ -6,6 +6,7 @@ const path = require('path');
 
 const newsRoutes = require('./routes/news');
 const homeRoutes = require('./routes/home');
+const newsRuRoutes = require('./routes/newsRu');
 
 const app = express();
 const limiter = rateLimit({
@@ -31,6 +32,7 @@ app.use(limiter);
 
 app.use('/', homeRoutes)
 app.use('/news', newsRoutes);
+app.use('/newsRu', newsRuRoutes);
 
 app.use('*', (req, res) => {
   res.status(404).send('The resource can not be found');
