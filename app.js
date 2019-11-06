@@ -1,5 +1,6 @@
 const express = require('express');
 const helmet = require('helmet');
+const compression = require('compression');
 const rateLimit = require('express-rate-limit');
 const exphbs  = require('express-handlebars');
 const path = require('path');
@@ -29,6 +30,7 @@ app.use(express.json());
 
 app.use(helmet());
 app.use(limiter);
+app.use(compression());
 
 app.use('/', homeRoutes)
 app.use('/news', newsRoutes);
